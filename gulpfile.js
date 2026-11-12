@@ -9,6 +9,7 @@ const files = {
     htmlPath: 'src/**/*.html',
     scssPath: 'src/scss/**/*.scss',
     jsPath: 'src/js/**/*.js',
+    imagePath: 'src/assets/**/*'
 };
 
 // Compile HTML and copy it to dist
@@ -35,6 +36,12 @@ function jsTask() {
         .pipe(browserSync.stream());
 }
 
+// Copy images to dist
+function imageTask() {
+    return src(files.imagePath, {base: 'src', encoding: false})
+        .pipe(dest('dist'))
+        .pipe(browserSync.stream());
+}
 
 // Watch files and serve via BrowserSync
 function watchTask() {
@@ -46,10 +53,11 @@ function watchTask() {
     watch(files.htmlPath, htmlTask);
     watch(files.scssPath, scssTask);
     watch(files.jsPath, jsTask);
+    watch(files.imagePath, imageTask);
 }
 
 // Export tasks
 exports.default = series(
-    parallel(htmlTask, scssTask, jsTask),
+    parallel(htmlTask, scssTask, jsTask, imageTask),
     watchTask
 );
