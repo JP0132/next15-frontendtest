@@ -26,6 +26,19 @@
         position: relative;
     }
 
+    &__nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link{
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+
     img{
         filter: brightness(0) invert(1);
         height: 40px;
