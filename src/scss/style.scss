@@ -49,6 +49,13 @@ $overlayTextColour: #fff;
     font-family: "Poppins", sans-serif;
 }
 
+body {
+    &.disable-scroll {
+        position: fixed;
+        width: 100%;
+        overflow: hidden;
+    }
+}
 
 .wrap {
     width: 100%;
