@@ -51,7 +51,7 @@ $xl: 1200px;
     &__nav {
         display: none; // Hide nav links (mobile first design)
 
-         @media screen and (max-width: ($medium - 1px)) {
+        @media screen and (max-width: ($medium - 1px)) {
             &--open {
                 display: flex;
                 flex-direction: column;
@@ -133,7 +133,7 @@ $xl: 1200px;
         }
     }
 }
-.hero{
+.hero {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -142,7 +142,7 @@ $xl: 1200px;
     height: 100vh;
     overflow: hidden;
 
-    &__bg{
+    &__bg {
         position: absolute;
         top: 0;
         left: 0;
@@ -151,10 +151,53 @@ $xl: 1200px;
         object-fit: cover;
         z-index: -1;
     }
-    
-    &__title{
+
+    &__title {
         color: #fff;
         font-size: 2em;
         font-weight: 700;
+    }
+}
+
+.menu {
+    background: #6bdde3;
+    padding: 40px 0;
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        text-align: center;
+        color: #000;
+    }
+
+    &__filters {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 100%;
+        max-width: 200px;
+
+        @media screen and (min-width: $medium) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            max-width: none;
+        }
+    }
+
+    &__filter-btn {
+        text-decoration: none;
+        color: #000;
+        background: transparent;
+        border: solid 1px #000;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 10px 20px;
+
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
     }
 }
