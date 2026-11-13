@@ -222,4 +222,71 @@ $xl: 1200px;
             color: #fff;
         }
     }
+
+     &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        width: 100%;
+
+        @media screen and (min-width: $medium) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (min-width: $large) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+.menu__card {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        text-align: left;
+        flex-grow: 1;
+    }
+
+    &__title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #000;
+    }
+
+    &__description {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.5;
+    }
+
+    &__btn {
+        text-decoration: none;
+        color: #000;
+        background: transparent;
+        border: solid 1px #000;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 10px 20px;
+        margin-top: auto;
+        align-self: flex-start;
+
+        &:hover {
+            background: #000;
+            color: #fff;
+        }
+    }
 }
