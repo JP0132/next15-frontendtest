@@ -12,3 +12,18 @@ nav.addEventListener('click', (e) => {
         menuBtn.setAttribute('aria-expanded', 'false');
     }
 });
+
+// Map Overlay
+const viewMapBtn = document.getElementById('view-map');
+const viewMapOverlay = document.getElementById('overlay__map');
+const closeMapBtn = document.querySelector('.overlay__close');
+
+viewMapBtn.addEventListener('click', () => {
+    viewMapOverlay.classList.add('open');
+    viewMapOverlay.setAttribute('aria-hidden', 'false');
+});
+
+closeMapBtn.addEventListener('click', () => {
+    viewMapOverlay.classList.remove('open');
+    viewMapOverlay.setAttribute('aria-hidden', 'true');
+});
