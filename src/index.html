@@ -45,14 +45,14 @@
                 <h1 class="menu__title">Menu</h1>
 
                 <div class="menu__filters" role="group" aria-label="Filter menu">
-                    <button class="menu__filter-btn">Pizza</button>
-                    <button class="menu__filter-btn">Calzone</button>
-                    <button class="menu__filter-btn">Dessert</button>
-                    <button class="menu__filter-btn">Drinks</button>
+                    <button class="menu__filter-btn" data-filter="pizza" aria-pressed="false">Pizza</button>
+                    <button class="menu__filter-btn" data-filter="calzone" aria-pressed="false">Calzone</button>
+                    <button class="menu__filter-btn" data-filter="dessert" aria-pressed="false">Dessert</button>
+                    <button class="menu__filter-btn" data-filter="drinks" aria-pressed="false">Drinks</button>
                 </div>
 
                 <div class="menu__grid">
-                    <div class="menu__card">
+                    <div class="menu__card" data-category="pizza">
 
                         <img src="./assets/img/apizzaimage.jpg" alt="a pizza image">
 
@@ -67,7 +67,7 @@
                     </div>
 
 
-                    <div class="menu__card">
+                    <div class="menu__card" data-category="drinks">
 
                         <img src="./assets/img/bpizzaimage.jpg" alt="a pizza image">
 
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="menu__card">
+                    <div class="menu__card" data-category="calzone">
 
                         <img src="./assets/img/apizzaimage.jpg" alt="a pizza image">
 
@@ -123,17 +123,17 @@
         <section id="offer" class="offer-banner">
             <div class="wrap">
                 <div class="offer-banner__wrap">
-                <div class="offer-banner__content">
-                    <div class="offer-banner__tag">
-                        <h2 class="offer-banner__title">Exclusive offer</h2>
+                    <div class="offer-banner__content">
+                        <div class="offer-banner__tag">
+                            <h2 class="offer-banner__title">Exclusive offer</h2>
+                        </div>
+                        <p class="offer-banner__text">Sign up to our newsletter for exclusive offers for 2020</p>
+                        <!-- Removed type="button" since this is an <a> tag -->
+                        <a class="offer-banner__btn" href="#">Read more</a>
                     </div>
-                    <p class="offer-banner__text">Sign up to our newsletter for exclusive offers for 2020</p>
-                    <!-- Removed type="button" since this is an <a> tag -->
-                    <a class="offer-banner__btn" href="#">Read more</a>
-                </div>
-                <div class="offer-banner__image">
-                    <img src="./assets/img/apizzaimage.jpg" alt="Freshly baked pizza" loading="lazy">
-                </div>
+                    <div class="offer-banner__image">
+                        <img src="./assets/img/apizzaimage.jpg" alt="Freshly baked pizza" loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
@@ -195,6 +195,6 @@
 
     </footer>
     <script src="./js/all.js"></script>
-</body> 
+</body>
 
-  </html>     
+</html>

@@ -12,4 +12,9 @@
         background: $bg;
         color: $textColour;
     }
+
+    &.active {
+        background-color: #000;
+        color: #fff;
+    }
 }

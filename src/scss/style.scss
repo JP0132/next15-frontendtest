@@ -261,7 +261,7 @@ body {
         @include mixins.btn-style();
     }
 
-     &__grid {
+    &__grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
@@ -282,6 +282,10 @@ body {
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+    &--hide {
+        display: none;
+    }
 
     img {
         width: 100%;
@@ -398,7 +402,6 @@ body {
 }
 
 .offer-banner {
-
     &__wrap {
         background: $bannerBgColour;
         overflow: hidden;
@@ -408,7 +411,7 @@ body {
 
         @media screen and (min-width: $medium) {
             flex-direction: row;
-            align-items: stretch; 
+            align-items: stretch;
         }
     }
 
@@ -448,7 +451,7 @@ body {
         min-height: 240px;
         margin: 0;
         padding: 0;
-        
+
         @media screen and (min-width: $medium) {
             height: auto;
         }
@@ -458,7 +461,7 @@ body {
             height: 100%;
             object-fit: cover;
             display: block;
-            flex-grow: 1;   
+            flex-grow: 1;
         }
     }
 }

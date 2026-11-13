@@ -50,3 +50,32 @@ const header = document.querySelector('.header');
 const onScroll = () => header.classList.toggle('header--solid', window.scrollY > 60);
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
+
+// Menu filter
+const filterButtons = document.querySelectorAll('.menu__filter-btn');
+const cards = document.querySelectorAll('.menu__card');
+
+filterButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
+        });
+
+        button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
+
+        const filter = button.getAttribute('data-filter');
+
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (cardCategory === filter || filter === 'all') {
+                card.classList.remove('menu__card--hide');
+            } else {
+                card.classList.add('menu__card--hide');
+            }
+        });
+    });
+})
