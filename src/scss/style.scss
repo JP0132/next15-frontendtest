@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
+// Media Queries
+$small: 300px;
+$medium: 600px;
+$large: 900px;
+$xl: 1200px;
+
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +13,13 @@
     font-family: "Poppins", sans-serif;
 }
 
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: transparent;
     z-index: 10;
+    background: transparent;
     padding-left: 10px;
     padding-right: 10px;
 
@@ -21,31 +27,99 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 80px;
+        height: 70px;
         padding: 0;
         position: relative;
     }
 
-    &__nav{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    &__link{
-        color: #fff;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1.2em;
-    }
-
-    img{
+    img {
         filter: brightness(0) invert(1);
         height: 40px;
         width: 40px;
+
+        @media screen and (min-width: $medium) {
+            height: 40px;
+            width: 40px;
+        }
+        @media screen and (min-width: $large) {
+            height: 45px;
+            width: 45px;
+        }
+    }
+
+    //  Nav Links
+    &__nav {
+        display: none; // Hide nav links (mobile first design)
+
+        @media screen and (min-width: $medium) {
+            display: flex;
+            gap: 18px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+            
+        
+    }
+
+    &__link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 0 1em;
+        font-size: 1.2em;
+
+        @media screen and (min-width: $medium) {
+            font-size: 1rem;
+        }
+
+        &#contact-link {
+            @media screen and (min-width: $medium) {
+                display: none;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    &__contact-link {
+        display: none;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        cursor: pointer;
+        img {
+            height: 22px;
+            width: 22px;
+        }
+
+        @media screen and (min-width: $medium) {
+            display: flex;
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    &__menu-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: block;
+
+        // Will be seen when screen width is less than 600px
+        @media screen and (min-width: $medium) {
+            display: none;
+        }
     }
 }
-
 .hero{
     position: relative;
     display: flex;
