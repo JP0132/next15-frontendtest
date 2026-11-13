@@ -54,6 +54,7 @@ window.addEventListener('scroll', onScroll, { passive: true });
 // Menu filter
 const filterButtons = document.querySelectorAll('.menu__filter-btn');
 const cards = document.querySelectorAll('.menu__card');
+const noItemsMsg = document.querySelector('.menu__no-items');
 
 filterButtons.forEach(button => {
 
@@ -75,14 +76,23 @@ filterButtons.forEach(button => {
             activeFilter = filter;
         }
 
+        let itemsCounter = 0;
+
         cards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
 
             if (activeFilter === 'all' || cardCategory === activeFilter) {
                 card.classList.remove('menu__card--hide');
+                itemsCounter++;
             } else {
                 card.classList.add('menu__card--hide');
             }
         });
+
+        if (itemsCounter === 0) {
+            noItemsMsg.classList.remove('menu__no-items--hidden');
+        } else {
+            noItemsMsg.classList.add('menu__no-items--hidden');
+        }
     });
 })
