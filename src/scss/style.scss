@@ -8,6 +8,31 @@ $medium: 600px;
 $large: 900px;
 $xl: 1200px;
 
+// Header Colours
+$headerBgColour: transparent;
+$mobileNavBgColour: rgba(0, 0, 0, 0.8);
+$navTextColour: #fff;
+
+// Hero Colours
+$heroTextColour: #fff;
+
+// Menu Colours
+$menuBgColour: #6bdde3;
+$menuTextColour: #000;
+$menuCardColour: #fff;
+$menuCardTitleColour: #000;
+$menuCardTextColour: #555;
+
+// StoryColours
+$storyTitleColour: #000;
+$storyTextColour: #444;
+
+// Banner Colours
+$bannerBgColour: #6bdde3;
+$tagBgColour: #fff;
+$tagTextColour: #000;
+$bannerTextColour: #000;
+
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +61,7 @@ $xl: 1200px;
     left: 0;
     width: 100%;
     z-index: 10;
-    background: transparent;
+    background: $headerBgColour;
     padding-left: 10px;
     padding-right: 10px;
 
@@ -76,7 +101,7 @@ $xl: 1200px;
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: rgb(0, 0, 0, 0.6);
+                background: $mobileNavBgColour;
                 padding: 20px 0;
                 gap: 15px;
                 align-items: center;
@@ -93,7 +118,7 @@ $xl: 1200px;
     }
 
     &__link {
-        color: #fff;
+        color: $navTextColour;
         text-decoration: none;
         font-weight: 700;
         margin: 0 1em;
@@ -118,7 +143,7 @@ $xl: 1200px;
 
     &__contact-link {
         display: none;
-        color: #fff;
+        color: $navTextColour;
         text-decoration: none;
         font-weight: 700;
         cursor: pointer;
@@ -170,14 +195,14 @@ $xl: 1200px;
     }
 
     &__title {
-        color: #fff;
+        color: $heroTextColour;
         font-size: 2em;
         font-weight: 700;
     }
 }
 
 .menu {
-    background: #6bdde3;
+    background: $menuBgColour;
     padding: 40px 0;
 
     &__wrap {
@@ -191,7 +216,7 @@ $xl: 1200px;
         font-size: 2.2rem;
         font-weight: 900;
         text-align: center;
-        color: #000;
+        color: $menuTextColour;
     }
 
     &__filters {
@@ -230,7 +255,7 @@ $xl: 1200px;
 }
 
 .menu__card {
-    background: #fff;
+    background: $menuCardColour;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -254,12 +279,12 @@ $xl: 1200px;
     &__title {
         font-size: 1.25rem;
         font-weight: 700;
-        color: #000;
+        color: $menuCardTitleColour;
     }
 
     &__description {
         font-size: 0.95rem;
-        color: #555;
+        color: $menuCardTextColour;
         line-height: 1.5;
     }
 
@@ -307,6 +332,7 @@ $xl: 1200px;
     &__title {
         font-size: 2.5rem;
         font-weight: 700;
+        color: $storyTitleColour;
         padding-bottom: 20px;
         @media screen and (min-width: $medium) {
             font-size: 4rem;
@@ -317,7 +343,7 @@ $xl: 1200px;
         font-size: 1rem;
         font-weight: 300;
         line-height: 1.6;
-        color: #444;
+        color: $storyTextColour;
     }
 
     &__social {
@@ -352,7 +378,7 @@ $xl: 1200px;
 .offer-banner {
 
     &__wrap {
-        background: #6bdde3;
+        background: $bannerBgColour;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -376,8 +402,8 @@ $xl: 1200px;
     }
 
     &__tag {
-        background: #fff;
-        color: #000;
+        background: $tagBgColour;
+        color: $tagTextColour;
         padding: 6px 12px;
         font-size: 0.8rem;
         font-weight: 700;
@@ -385,7 +411,7 @@ $xl: 1200px;
     }
 
     &__text {
-        color: #000;
+        color: $bannerTextColour;
         font-size: 1.25rem;
         font-weight: 700;
         line-height: 1.4;
