@@ -58,20 +58,27 @@ const cards = document.querySelectorAll('.menu__card');
 filterButtons.forEach(button => {
 
     button.addEventListener('click', () => {
+        const isActive = button.classList.contains('active');
+        const filter = button.getAttribute('data-filter');
+
         filterButtons.forEach(btn => {
             btn.classList.remove('active');
             btn.setAttribute('aria-pressed', 'false');
         });
 
-        button.classList.add('active');
-        button.setAttribute('aria-pressed', 'true');
+        let activeFilter = 'all';
 
-        const filter = button.getAttribute('data-filter');
+        // If the clicked button was already active, show all the cards
+        if (!isActive) {
+            button.classList.add('active');
+            button.setAttribute('aria-pressed', 'true');
+            activeFilter = filter;
+        }
 
         cards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
 
-            if (cardCategory === filter || filter === 'all') {
+            if (activeFilter === 'all' || cardCategory === activeFilter) {
                 card.classList.remove('menu__card--hide');
             } else {
                 card.classList.add('menu__card--hide');
