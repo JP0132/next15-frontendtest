@@ -33,6 +33,11 @@ $tagBgColour: #fff;
 $tagTextColour: #000;
 $bannerTextColour: #000;
 
+// Footer Colours
+$footerBgColour: #000;
+$footerTextColour: #fff;
+$footerLegalTextColour: #aaa;
+
 * {
     margin: 0;
     padding: 0;
@@ -437,6 +442,127 @@ $bannerTextColour: #000;
             object-fit: cover;
             display: block;
             flex-grow: 1;   
+        }
+    }
+}
+
+.footer {
+    background: $footerBgColour;
+    color: $footerTextColour;
+    padding: 60px 0 40px;
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        // On larger screens use  a 3-column layout
+        @media screen and (min-width: $medium) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+        }
+    }
+
+    // Brand Section
+    &__brand {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 320px;
+
+        img {
+            filter: brightness(0) invert(1);
+            height: 50px;
+            width: 50px;
+        }
+
+        small {
+            font-size: 0.75rem;
+            color: $footerLegalTextColour;
+            line-height: 1.4;
+        }
+
+        @media screen and (min-width: $medium) {
+            margin-right: auto;
+        }
+    }
+
+    // Contact and Follow Section
+    &__contact,
+    &__follow {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @media screen and (min-width: $medium) {
+            width: 200px;
+        }
+    }
+
+    &__title {
+        font-size: 0.8rem;
+        font-weight: 700;
+
+        border-bottom: 1px solid rgba(255, 255, 255);
+    }
+
+    &__phone {
+        text-decoration: none;
+        color: $footerTextColour;
+        font-size: 1rem;
+        font-weight: 700;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        @media screen and (min-width: $large) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__social-icons {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-top: 4px;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: translateY(-3px);
+            }
+        }
+
+        img {
+            filter: brightness(0) invert(1);
+            height: 15px;
+            width: 15px;
+        }
+    }
+
+    &__made {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        align-self: flex-start;
+
+        @media screen and (min-width: $medium) {
+            align-self: flex-end;
+        }
+
+        @media screen and (min-width: $medium) {
+            flex: 1;
+
+            h4 {
+                width: 100%;
+            }
         }
     }
 }
