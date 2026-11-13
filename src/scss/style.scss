@@ -1,3 +1,5 @@
+@use "mixins";
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
 // Media Queries
@@ -208,19 +210,7 @@ $xl: 1200px;
     }
 
     &__filter-btn {
-        text-decoration: none;
-        color: #000;
-        background: transparent;
-        border: solid 1px #000;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: 700;
-        padding: 10px 20px;
-
-        &:hover {
-            background: #000;
-            color: #fff;
-        }
+        @include mixins.btn-style();
     }
 
      &__grid {
@@ -273,20 +263,8 @@ $xl: 1200px;
     }
 
     &__btn {
-        text-decoration: none;
-        color: #000;
-        background: transparent;
-        border: solid 1px #000;
-        cursor: pointer;
-        font-size: 0.9rem;
-        font-weight: 700;
-        padding: 10px 20px;
+        @include mixins.btn-style();
         margin-top: auto;
         align-self: flex-start;
-
-        &:hover {
-            background: #000;
-            color: #fff;
-        }
     }
 }
