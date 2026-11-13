@@ -44,3 +44,9 @@ const enableScroll = () => {
     document.body.classList.remove('disable-scroll');
     window.scrollTo(0, scrollPosition); // automatically scroll to previous position
 };
+
+// Header gets a background once you scroll a bit down
+const header = document.querySelector('.header');
+const onScroll = () => header.classList.toggle('header--solid', window.scrollY > 60);
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });

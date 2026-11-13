@@ -12,6 +12,7 @@ $xl: 1200px;
 $headerBgColour: transparent;
 $mobileNavBgColour: rgba(0, 0, 0, 0.8);
 $navTextColour: #fff;
+$navBgColour: rgba(0, 0, 0, 0.5);
 
 // Hero Colours
 $heroTextColour: #fff;
@@ -81,6 +82,10 @@ body {
     background: $headerBgColour;
     padding-left: 10px;
     padding-right: 10px;
+
+    &--solid {
+        background: $navBgColour;
+    }
 
     &__bar {
         display: flex;
