@@ -52,3 +52,7 @@
 
 - The assets and design included in this repo are to be used only for the purposes of this exercise and may not be used in any form for other projects without prior written consent.
 - The code you write is yours to do with as you please.
+
+# How to install
+ 1. Run `npm i` to install all the required packages.
+ 2. Run `npx gulp` to execute the gulp build file and run the tasks.
