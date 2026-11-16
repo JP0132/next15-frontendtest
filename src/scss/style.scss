@@ -203,7 +203,7 @@ body {
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: 800px;
     overflow: hidden;
 
     &__bg {
@@ -216,11 +216,26 @@ body {
         z-index: -1;
     }
 
-    &__title {
+     &__title {
         color: $heroTextColour;
         font-size: 2em;
         font-weight: 700;
+        max-width: 600px;
     }
+
+    @media screen and (min-width: $medium) {
+        height: 900px;
+        &__title {
+            font-size: 3em;
+        }
+    }
+    @media screen and (min-width: $large) {
+        height: 1000px;
+        &__title {
+            font-size: 4em;
+        }
+    }
+
 }
 
 .menu {
