@@ -20,6 +20,8 @@ const closeMapBtn = document.querySelector('.overlay__close');
 
 viewMapBtn.addEventListener('click', () => {
     viewMapOverlay.classList.add('open');
+    
+    // This will make the overlay visible to screen readers
     viewMapOverlay.setAttribute('aria-hidden', 'false');
     disableScroll();
 
@@ -62,6 +64,7 @@ filterButtons.forEach(button => {
         const isActive = button.classList.contains('active');
         const filter = button.getAttribute('data-filter');
 
+        // Remove active class from all buttons
         filterButtons.forEach(btn => {
             btn.classList.remove('active');
             btn.setAttribute('aria-pressed', 'false');
@@ -76,19 +79,20 @@ filterButtons.forEach(button => {
             activeFilter = filter;
         }
 
-        let itemsCounter = 0;
+        let itemsCounter = 0; // Counter to check if there are no items
 
         cards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
 
             if (activeFilter === 'all' || cardCategory === activeFilter) {
                 card.classList.remove('menu__card--hide');
-                itemsCounter++;
+                itemsCounter++; // Increment the counter for each visible card
             } else {
                 card.classList.add('menu__card--hide');
             }
         });
 
+        // If there are no visible cards, show the no items message
         if (itemsCounter === 0) {
             noItemsMsg.classList.remove('menu__no-items--hidden');
         } else {
